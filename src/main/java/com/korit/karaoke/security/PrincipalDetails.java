@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class principalDetails implements UserDetails, OAuth2User {
+public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Getter
     private final UserMst user;
@@ -27,6 +27,8 @@ public class principalDetails implements UserDetails, OAuth2User {
         user.getRoleDtl().forEach(dtl -> {
             authorities.add(() -> dtl.getRoleMst().getRoleName());
         });
+
+        return authorities;
     }
 
     @Override
@@ -37,6 +39,11 @@ public class principalDetails implements UserDetails, OAuth2User {
     @Override
     public String getUsername() {
         return user.getUsername();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
     @Override

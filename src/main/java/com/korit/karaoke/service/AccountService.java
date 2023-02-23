@@ -1,6 +1,7 @@
 package com.korit.karaoke.service;
 
 import com.korit.karaoke.entity.UserMst;
+import com.korit.karaoke.exception.CustomValidationException;
 import com.korit.karaoke.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class AccountService {
     public UserMst registerUser(UserMst userMst) {
         userMst.setPassword(new BCryptPasswordEncoder().encode(userMst.getPassword()));
         accountRepository.saveUser(userMst);
-        accountRepository.saveRole(userMst)
+        accountRepository.saveRole(userMst);
         return userMst;
     }
 
@@ -30,7 +31,7 @@ public class AccountService {
             Map<String, String> errorMap = new HashMap<>();
             errorMap.put("username", "이미 존재하는 사용자이름입니다,");
 
-            throw new customValidationException(errorMap);
+            throw new CustomValidationException(errorMap);
         }
     }
 

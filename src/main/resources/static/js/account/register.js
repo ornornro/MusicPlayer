@@ -55,14 +55,16 @@ class RegisterService {
                 registerError[2].textContent = errors[error];
             }else if(error == "name") {
                 registerError[3].textContent = errors[error];
-            }else if(error == "email") {
+            }else if(error == "phonenumber") {
                 registerError[4].textContent = errors[error];
+            }else if(error == "email") {
+                registerError[5].textContent = errors[error];
             }
         });
     }
 
     #clearErrorMessage() {
-        const registerError = document.querySelectorAll("register-error");
+        const registerError = document.querySelectorAll(".register-error");
         registerError.forEach(error => {
             error.textContent = "";
         });
@@ -86,9 +88,10 @@ class RegisterEvent {
             const passwordValue = document.querySelectorAll(".register-inputs")[1].value;
             const repasswordValue = document.querySelectorAll(".register-inputs")[2].value;
             const nameValue = document.querySelectorAll(".register-inputs")[3].value;
-            const emailValue = document.querySelectorAll(".register-inputs")[4].value;
+            const phonenumberValue = document.querySelectorAll(".register-inputs")[4].value;
+            const emailValue = document.querySelectorAll(".register-inputs")[5].value;
 
-            const user = new User(usernameValue, passwordValue, repasswordValue, nameValue, emailValue);
+            const user = new User(usernameValue, passwordValue, repasswordValue, nameValue, phonenumberValue, emailValue);
 
             RegisterApi.getInstance().register(user);
         }
@@ -100,13 +103,15 @@ class User {
     password = null;
     repassword = null;
     name = null;
+    phonenumber = null;
     email = null;
 
-    constructor(username, password, repassword, name, email) {
+    constructor(username, password, repassword, name, phonenumber, email) {
         this.username = username;
         this.password = password;
         this.repassword = repassword;
         this.name = name;
+        this.phonenumber = phonenumber;
         this.email = email;
     }
 }

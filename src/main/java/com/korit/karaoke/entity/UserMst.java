@@ -25,7 +25,10 @@ public class UserMst {
     @NotBlank
     private String name;
     @NotBlank
+    private String phonenumber;
+    @NotBlank
     private String email;
+    private String provider;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private List<RoleDtl> roleDtl;

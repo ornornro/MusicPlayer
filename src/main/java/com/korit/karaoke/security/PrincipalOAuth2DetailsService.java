@@ -47,10 +47,11 @@ public class PrincipalOAuth2DetailsService extends DefaultOAuth2UserService {
             accountRepository.saveRole(userMst);
             userMst = accountRepository.findUserByUsername(username);
         } else if (userMst.getProvider() == null) {
-            userMst.setProvider(userMst);
+            userMst.setProvider(provider);
+            accountRepository.setUserProvider(userMst);
         }
 
-        principalDetails new PrincipalDetails(userMst, attributes);
+        principalDetails = new PrincipalDetails(userMst, attributes);
 
         return principalDetails;
     }

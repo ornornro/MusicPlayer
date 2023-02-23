@@ -10,6 +10,7 @@
         <result property="username" column="username"></result>
         <result property="password" column="password"></result>
         <result property="name" column="name"></result>
+        <result property="phonenumber" column="phonenumber"></result>
         <result property="email" column="email"></result>
         <result property="createDate" column="create_date"></result>
         <result property="updateDate" column="update_date"></result>
@@ -37,11 +38,12 @@
             um.username,
             um.password,
             um.name,
+            um.phonenumber,
             um.email,
             um.provider,
 
             rd.role_id,
-            rm.role_name
+            rm.role_name,
 
             um.create_date,
             um.update_date
@@ -59,11 +61,12 @@
             um.username,
             um.password,
             um.name,
+            um.phonenumber,
             um.email,
             um.provider,
 
             rd.role_id,
-            rm.role_name
+            rm.role_name,
 
             um.create_date,
             um.update_date
@@ -77,7 +80,7 @@
 
     <insert id="saveUser" parameterType="com.korit.karaoke.entity.UserMst" useGeneratedKeys="true" keyProperty="userId">
         insert into user_mst
-        values (0, #{username}, #{password}, #{name}, #{email}, now(), now())
+        values (0, #{username}, #{password}, #{name}, #{phonenumber}, #{email}, #{provider}, now(), now())
     </insert>
 
     <insert id="saveRole" parameterType="com.korit.karaoke.entity.UserMst">

@@ -5,7 +5,7 @@
 
 <mapper namespace="com.korit.karaoke.repository.AccountRepository">
 
-    <resultMap id="userMst" type="com.korit.karaoke.repository.AccountRepository">
+    <resultMap id="userMst" type="com.korit.karaoke.entity.UserMst">
         <result property="userId" column="user_id"></result>
         <result property="username" column="username"></result>
         <result property="password" column="password"></result>
@@ -14,6 +14,7 @@
         <result property="email" column="email"></result>
         <result property="createDate" column="create_date"></result>
         <result property="updateDate" column="update_date"></result>
+        <collection property="roleDtl" javaType="list" resultMap="roleDtl"></collection>
     </resultMap>
 
     <resultMap id="roleMst" type="com.korit.karaoke.entity.RoleMst">

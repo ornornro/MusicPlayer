@@ -1,5 +1,6 @@
 package com.korit.karaoke.web.api;
 
+import com.korit.karaoke.aop.annotation.ParamsAspect;
 import com.korit.karaoke.aop.annotation.ValidAspect;
 import com.korit.karaoke.security.PrincipalDetails;
 import com.korit.karaoke.service.AccountService;
@@ -71,6 +72,13 @@ public class AccountApi {
         return ResponseEntity
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Success", principalDetails));
+    }
+
+    @ParamsAspect
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<CMRespDto<?>> removeUser(@PathVariable int userId) {
+        accountService.removeUser(userId);
+        return ResponseEntity.ok().body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
     }
 
 }

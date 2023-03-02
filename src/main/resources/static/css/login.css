@@ -25,4 +25,7 @@
 .register-submit {width: 100%; background-color: #816ddd; border-radius: 4px; padding: 10px 0; margin-top: 25px; color: #fff;}
 .register-submit:hover {color: #ccc; transition: all 0.2s;}
 
+.modify-submit {width: 100%; background-color: #816ddd; border-radius: 4px; padding: 10px 0; margin-top: 25px; color: #fff;}
+.modify-submit:hover {color: #ccc; transition: all 0.2s;}
+
 .id-lost {width: 100%; background: rgb(90,199,255,.05); border-radius: 40px; box-shadow: 3px 0 rgb(0 0 0 / 7%); padding: 100px 50px 100px 50px;}

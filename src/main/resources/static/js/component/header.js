@@ -43,7 +43,7 @@ class HeaderService {
             </div>
             <div class="logo-search">
                 <div class="logo">
-                    <a href="/index.html">
+                    <a href="/index">
                         <h1>
                             <img src="../static/images/kysing.png">
                         </h1>
@@ -56,41 +56,42 @@ class HeaderService {
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="#">KY 차트</a>
+                    <li><a href="javascript:void(0);">KY 차트</a>
                         <ul class="dropdown">
                             <li><a href="#">Sub-1</a></li>
                             <li><a href="#">Sub-2</a></li>
                             <li><a href="#">Sub-3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">PICK</a>
+                    <li><a href="javascript:void(0);">PICK</a>
                         <ul class="dropdown">
                             <li><a href="#">Sub-1</a></li>
                             <li><a href="#">Sub-2</a></li>
                             <li><a href="#">Sub-3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">KY CONTENTS</a>
+                    <li><a href="javascript:void(0);">KY CONTENTS</a>
                         <ul class="dropdown">
                             <li><a href="#">Sub-1</a></li>
                             <li><a href="#">Sub-2</a></li>
                             <li><a href="#">Sub-3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">반주곡 검색</a>
+                    <li><a href="javascript:void(0);">반주곡 검색</a>
                         <ul class="dropdown">
                             <li><a href="#">Sub-1</a></li>
                             <li><a href="#">Sub-2</a></li>
                             <li><a href="#">Sub-3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">이용권 구매</a></li>
-                    <li><a href="#">마이페이지</a>
+                    <li><a href="javascript:void(0);">이용권 구매</a></li>
+                    <li>
+                        <a href="javascript:void(0);">마이페이지</a>
                         <ul class="dropdown">
-                            <li><a href="#">Sub-1</a></li>
-                            <li><a href="#">Sub-2</a></li>
-                            <li><a href="#">Sub-3</a></li>
-                        </ul>
+                            <li><a href="#">웹 애창곡</a></li>
+                            <li><a href="#">플레이리스트</a></li>
+                            <li><a href="/mypage">내 정보 관리</a></li>
+                        </ul>                   
                     </li>
                 </ul>
             </div>

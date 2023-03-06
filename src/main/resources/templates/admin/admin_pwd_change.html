@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/index.css">
@@ -18,80 +19,6 @@
     <div id="container">
         <header class="header-container">
             <div class="header-wrap">
-                <div class="util">
-                    <ul class="util-left">
-                        <a href="#">
-                            <li>노래방 플레이어 다운</li>
-                        </a>
-                        <a href="#">
-                            <li>키싱 이용안내</li>
-                        </a>
-                        <a href="#">
-                            <li>고객센터</li>
-                        </a>
-                    </ul>
-                    <ul class="util-right">
-                        <a href="#">
-                            <li>로그인</li>
-                        </a>
-                        <a href="#">
-                            <li>회원가입</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="logo-search">
-                    <div class="logo">
-                        <a href="/index.html">
-                            <h1>
-                                <img src="/static/images/kysing.png">
-                            </h1>
-                        </a>
-                    </div>
-                    <div class="search">
-                        <input type="text" class="search-input">
-                        <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </div>
-                <div class="nav">
-                    <ul>
-                        <li><a href="#">KY 차트</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Sub-1</a></li>
-                                <li><a href="#">Sub-2</a></li>
-                                <li><a href="#">Sub-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">PICK</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Sub-1</a></li>
-                                <li><a href="#">Sub-2</a></li>
-                                <li><a href="#">Sub-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">KY CONTENTS</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Sub-1</a></li>
-                                <li><a href="#">Sub-2</a></li>
-                                <li><a href="#">Sub-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">반주곡 검색</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Sub-1</a></li>
-                                <li><a href="#">Sub-2</a></li>
-                                <li><a href="#">Sub-3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">이용권 구매</a></li>
-                        <li><a href="#">마이페이지</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Sub-1</a></li>
-                                <li><a href="#">Sub-2</a></li>
-                                <li><a href="#">Sub-3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </header>
         
@@ -106,7 +33,7 @@
                     <li><a href="">플레이리스트</a></li>
                     <li><a href="">내 쿠폰함</a></li>
                     <li><a href="">이용권 결제 내역</a></li>
-                    <li class="on"><a href="">내 정보 관리</a></li>
+                    <li class="on"><a href="/mypage">내 정보 관리</a></li>
                 </ul>
             </div>
     
@@ -114,35 +41,8 @@
 
                 <div class="login-container">
                     <div class="login-container-wrap">
-                    <div class="register-container">
-    
-                        <!-- 회원가입 정보 입력 -->
-                        <div class="register-content">
-                            <div class="register-group">
-                                <label for="register-name">현재 비밀번호</label>
-                                <div class="input-group">
-                                    <input type="text" id="register-name" class="register-inputs">
-                                    <div class="register-error"></div>
-                                </div>
-                            </div>
-                            <div class="register-group">
-                                <label for="register-tel">새로운 비밀번호</label>
-                                <div class="input-group">
-                                    <input type="text" id="register-tel" class="register-inputs">
-                                    <div class="register-error"></div>
-                                </div>
-                            </div>
-                            <div class="register-group">
-                                <label for="register-email">새로운 비밀번호 확인</label>
-                                <div class="input-group">
-                                    <input type="text" id="register-email" class="register-inputs">
-                                    <div class="register-error"></div>
-                                </div>
-                            </div>
-        
-                        </div>
-                        <button type="button" class="modify-submit">비밀번호 변경 완료</button>
-                    </div>   
+                        <div class="password-container">
+                        </div>   
                     </div>             
                 </div>
 
@@ -190,8 +90,8 @@
                 </div>
             </div>
         </footer>
-    <script>
-        
-    </script>
+    <script src="/static/js/account/principal.js"></script>
+    <script src="/static/js/component/header.js"></script>
+    <script src="/static/js/admin/modifypassword.js"></script>
 </body>
 </html>

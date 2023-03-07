@@ -89,13 +89,20 @@
         values (0, #{userId}, 1, now(), now())
     </insert>
 
-    <update id="updateUserInformation" parameterType="com.korit.karaoke.entity.UserMst">
+    <update id="updateUserInformation" parameterType="com.korit.karaoke.web.dto.AccountReqDto">
         update user_mst
         set
-        user_id = userId,
+        user_id = #{userId},
+        username = #{username},
+        password = #{password},
         <if test='name != null and name != ""'>name = #{name},</if>
-        <if test='name != null and name != ""'>name = #{name},</if>
-        <if test='name != null and name != ""'>name = #{name},</if>
+        <if test='phonenumber != null and phonenumber != ""'>phonenumber = #{phonenumber},</if>
+        <if test='email != null and email != ""'>email = #{email},</if>
+        <if test='provider != null and provider != ""'>provider = #{provider},</if>
+        create_date = #{createDate},
+        update_date = #{updateDate}
+        where
+        user_id = #{userId}
     </update>
 
     <update id="setUserProvider" parameterType="com.korit.karaoke.entity.UserMst">

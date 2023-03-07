@@ -4,6 +4,7 @@ import com.korit.karaoke.aop.annotation.ParamsAspect;
 import com.korit.karaoke.aop.annotation.ValidAspect;
 import com.korit.karaoke.security.PrincipalDetails;
 import com.korit.karaoke.service.AccountService;
+import com.korit.karaoke.web.dto.AccountReqDto;
 import com.korit.karaoke.web.dto.CMRespDto;
 import com.korit.karaoke.entity.UserMst;
 import io.swagger.annotations.*;
@@ -81,6 +82,16 @@ public class AccountApi {
     public ResponseEntity<CMRespDto<?>> removeUser(@PathVariable int userId) {
         accountService.removeUser(userId);
         return ResponseEntity.ok().body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
+    }
+
+    @ParamsAspect
+    @ValidAspect
+    @PutMapping("/user/{userId}")
+    public ResponseEntity<CMRespDto<?>> modifyUser(@PathVariable int userId, @Valid @RequestBody AccountReqDto accountReqDto, BindingResult bindingResult) {
+        accountService.modifyUser(accountReqDto);
+        return  ResponseEntity
+                .ok()
+                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
     }
 
 }

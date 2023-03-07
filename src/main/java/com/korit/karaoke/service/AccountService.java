@@ -3,6 +3,7 @@ package com.korit.karaoke.service;
 import com.korit.karaoke.entity.UserMst;
 import com.korit.karaoke.exception.CustomValidationException;
 import com.korit.karaoke.repository.AccountRepository;
+import com.korit.karaoke.web.dto.AccountReqDto;
 import com.korit.karaoke.web.dto.CMRespDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,10 @@ public class AccountService {
 
     public void removeUser(int userId) {
         accountRepository.deleteUser(userId);
+    }
+
+    public void modifyUser(AccountReqDto accountReqDto) {
+        accountRepository.updateUserInformation(accountReqDto);
     }
 
 }

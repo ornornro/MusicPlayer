@@ -2,6 +2,8 @@ package com.korit.karaoke.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class ModificationController {
@@ -11,7 +13,7 @@ public class ModificationController {
         return "admin/admin_modification";
     }
 
-    @GetMapping({"/mypage/edit_information"})
+    @PutMapping({"/mypage/edit_information"})
     public String editInformation() {
         return "admin/admin_edit_information";
     }

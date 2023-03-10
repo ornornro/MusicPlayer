@@ -21,13 +21,6 @@ class ModifyPasswordService {
         passwordContainer.innerHTML = `
                 <div class="register-content">
                 <div class="register-group">
-                    <label for="register-password">현재 비밀번호</label>
-                    <div class="input-group">
-                        <input type="text" id="register-password" class="register-inputs">
-                        <div class="register-error"></div>
-                    </div>
-                </div>
-                <div class="register-group">
                     <label for="register-newpassword">새로운 비밀번호</label>
                     <div class="input-group">
                         <input type="text" id="register-newpassword" class="register-inputs">

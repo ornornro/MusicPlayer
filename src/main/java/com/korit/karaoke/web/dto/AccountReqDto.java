@@ -15,8 +15,6 @@ public class AccountReqDto {
     private String username;
     @ApiModelProperty(hidden = true)
     private String password;
-    @ApiModelProperty(hidden = true)
-    private String repassword;
     private String name;
     private String phonenumber;
     private String email;

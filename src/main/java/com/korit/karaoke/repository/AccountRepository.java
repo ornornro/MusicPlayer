@@ -9,6 +9,7 @@ public interface AccountRepository {
 
     public UserMst findUserByUserId(int userId);
     public UserMst findUserByUsername(String userName);
+    public UserMst confirmUserByPassword(String password);
     public int saveUser(UserMst user);
     public int saveRole(UserMst user);
     public int updateUserInformation(AccountReqDto accountReqDto);

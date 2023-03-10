@@ -89,17 +89,36 @@
         values (0, #{userId}, 1, now(), now())
     </insert>
 
+    <select id="confirmUserByPassword" parameterType="String" resultMap="userMst">
+        select
+        um.user_id,
+        um.username,
+        um.password,
+        um.name,
+        um.phonenumber,
+        um.email,
+        um.provider,
+
+        rd.role_id,
+        rm.role_name,
+
+        um.create_date,
+        um.update_date
+        from
+        user_mst um
+        left outer join role_dtl rd on(rd.user_id = um.user_id)
+        left outer join role_mst rm on(rm.role_id = rd.role_id)
+        where
+        um.password = #{password}
+    </select>
+
     <update id="updateUserInformation" parameterType="com.korit.karaoke.web.dto.AccountReqDto">
         update user_mst
         set
-        user_id = #{userId},
-        username = #{username},
-        password = #{password},
         <if test='name != null and name != ""'>name = #{name},</if>
         <if test='phonenumber != null and phonenumber != ""'>phonenumber = #{phonenumber},</if>
         <if test='email != null and email != ""'>email = #{email},</if>
         <if test='provider != null and provider != ""'>provider = #{provider},</if>
-        create_date = #{createDate},
         update_date = #{updateDate}
         where
         user_id = #{userId}

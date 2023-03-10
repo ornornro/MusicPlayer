@@ -88,6 +88,7 @@ public class AccountApi {
     @ValidAspect
     @PutMapping("/user/{userId}")
     public ResponseEntity<CMRespDto<?>> modifyUser(@PathVariable int userId, @Valid @RequestBody AccountReqDto accountReqDto, BindingResult bindingResult) {
+        accountReqDto.setUserId(userId);
         accountService.modifyUser(accountReqDto);
         return  ResponseEntity
                 .ok()

@@ -13,9 +13,14 @@ public class ModificationController {
         return "admin/admin_modification";
     }
 
-    @PutMapping({"/mypage/edit_information"})
+    @GetMapping({"/mypage/edit_information"})
     public String editInformation() {
         return "admin/admin_edit_information";
+    }
+
+    @GetMapping({"/mypage/pwd_confirm"})
+    public String pwdConfirm() {
+        return "admin/admin_pwd_confirm";
     }
 
     @GetMapping({"/mypage/pwd_change"})

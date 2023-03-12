@@ -22,8 +22,11 @@ public class ModifyApi {
     private ModifyService modifyService;
 
     @PostMapping("/pwd_confirm")
-    public ResponseEntity<Boolean> checkPassword(@AuthenticationPrincipal PrincipalDetails principalDetails, @RequestBody Map<String, String> checkPasswordMap) {
-        return ResponseEntity.ok(modifyService.checkPassword(principalDetails.getUser(), checkPasswordMap.get("checkPassword")));
+    public ResponseEntity<Boolean> checkPassword(
+            @AuthenticationPrincipal PrincipalDetails principalDetails,
+            @RequestBody Map<String, String> checkPasswordMap) {
+        return ResponseEntity
+                .ok(modifyService.checkPassword(principalDetails.getUser(), checkPasswordMap.get("checkPassword")));
     }
 
 }

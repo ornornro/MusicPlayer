@@ -4,6 +4,46 @@ window.onload = () => {
     ModifyPasswordService.getInstance().changeModifyPassword();
 }
 
+let userObj = {
+    userId: "",
+    username: "",
+    password: "",
+    name: "",
+    phoneNumber: "",
+    email: ""
+}
+
+class PasswordModificationApi {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new PasswordModificationApi();
+        }
+        return this.#instance;
+    }
+
+    modifyPassword() {
+        let successFlag = false;
+
+        $.ajax({
+            async: false,
+            type: "put",
+            url: `http://localhost:8000/api/account/user/${userObj.userId}`,
+            contentType: "application/json",
+            data: JSON.stringify(userObj),
+            dataType: "json",
+            success: response => {
+                successFlag = true;
+            },
+            error: error => {
+                console.log(error);
+            }            
+        });
+
+        return successFlag;
+    }
+}
+
 class ModifyPasswordService {
     static #instance = null;
     static getInstance() {
